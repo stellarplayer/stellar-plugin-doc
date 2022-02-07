@@ -1,0 +1,13 @@
+:root {
+    // brand colors
+    --c-brand: #3e7fff;
+    --c-brand-light: #3e7fff;  
+}
+
+a {
+    text-decoration: none !important;
+}
+
+div.theme-default-content:not(.custom) {
+    max-width: 95%;
+}

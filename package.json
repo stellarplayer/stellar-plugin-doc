@@ -1,0 +1,17 @@
+{
+  "name": "stellar-plugin-doc",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vuepress dev docs",
+    "build": "vuepress build docs"
+  },
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@vuepress/plugin-register-components": "^2.0.0-beta.33",
+    "vuepress": "^2.0.0-beta.33",
+    "vuepress-plugin-flowchart": "^1.5.0"
+  }
+}
