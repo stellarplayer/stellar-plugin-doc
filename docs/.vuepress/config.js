@@ -21,12 +21,14 @@ module.exports = {
       ],
     },
     plugins: [
-        [
-            '@vuepress/register-components',
-            {
-                componentsDir: path.resolve(__dirname, './components'),
-            },
-        ],
-        'flowchart'
-    ]
+      [
+          '@vuepress/register-components',
+          {
+              componentsDir: path.resolve(__dirname, './components'),
+          },
+      ]
+    ],
+    extendsMarkdown: md => {
+       md.use(require('markdown-it-plantuml'))
+    },
   }

@@ -101,21 +101,32 @@ def show(self):
 
 ## 插件的运行
 
-```
-@flowstart
-start=>start: 播放器启动
-init_py=>operation: 初始化 Python 环境
-plugin_load=>operation: 加载插件 main.py
-plugin_start=>operation: 启动插件
-plugin_show=>operation: 显示插件
-plugin_stop=>operation: 关闭插件
-e=>end
+@startuml
+start
+:播放器启动;
+if (初始化 Python 环境) then (no)
+    :失败;
+    stop
+else (yes)
+    if (加载插件 main.py) then (no)
+        :失败;
+        stop
+    else (yes)
+        if (启动插件 plugin.start) then (no)
+            :失败;
+            stop
+        endif
+    endif
+endif
+#cccccc:用户打开插件;
+:显示插件 plugin.show;
+#cccccc:用户关闭插件;
+:播放器退出;
+stop
+@enduml
 
+对于没有界面的插件，可以不实现插件的 `show` 方法。相应的，它将不会出现在插件菜单中。
 
-start->init_py->plugin_load->plugin_start->plugin_stop->e
-plugin_stop->e
-@flowend
-```
 ## 内置包
 
 播放器自带的 Python 运行环境中，目前附带有以下第三方包：

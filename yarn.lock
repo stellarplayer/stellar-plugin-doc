@@ -769,11 +769,6 @@ estree-walker@^2.0.2:
   resolved "https://registry.yarnpkg.com/estree-walker/-/estree-walker-2.0.2.tgz#52f010178c2a4c117a7757cfe942adb7d2da4cac"
   integrity sha512-Rfkk/Mp/DL7JVje3u18FxFujQlTNR2q6QfMSMB7AvCBx91NGj/ba3kCfza0f6dVDbw7YlRf/nDrn7pQrCCyQ/w==
 
-eve-raphael@0.5.0:
-  version "0.5.0"
-  resolved "https://registry.yarnpkg.com/eve-raphael/-/eve-raphael-0.5.0.tgz#17c754b792beef3fa6684d79cf5a47c63c4cda30"
-  integrity sha1-F8dUt5K+7z+maE15z1pHxjxM2jA=
-
 execa@^5.1.1:
   version "5.1.1"
   resolved "https://registry.yarnpkg.com/execa/-/execa-5.1.1.tgz#f80ad9cbf4298f7bd1d4c9555c21e93741c411dd"
@@ -820,13 +815,6 @@ fill-range@^7.0.1:
   integrity sha512-qOo9F+dMUmC2Lcb4BbVvnKJxTPjCm+RRpe4gDuGrzkL7mEVl/djYSu2OdQ2Pa302N4oqkSg9ir6jaLWJ2USVpQ==
   dependencies:
     to-regex-range "^5.0.1"
-
-flowchart.js@^1.11.3:
-  version "1.17.1"
-  resolved "https://registry.yarnpkg.com/flowchart.js/-/flowchart.js-1.17.1.tgz#3908ce3778a44b0af5cba1ab31cb61e12dc384a1"
-  integrity sha512-zphTaxdyqvHHu+8Cdf6HvamhArXpq9SyNe1zQ61maCIfTenaj3cMvjS1e/0gfPj7QTLTx3HroSzVqDXpL8naoQ==
-  dependencies:
-    raphael "2.3.0"
 
 fraction.js@^4.1.2:
   version "4.1.2"
@@ -1053,6 +1041,11 @@ markdown-it-emoji@^2.0.0:
   resolved "https://registry.yarnpkg.com/markdown-it-emoji/-/markdown-it-emoji-2.0.0.tgz#3164ad4c009efd946e98274f7562ad611089a231"
   integrity sha512-39j7/9vP/CPCKbEI44oV8yoPJTpvfeReTn/COgRhSpNrjWF3PfP/JUxxB0hxV6ynOY8KH8Y8aX9NMDdo6z+6YQ==
 
+markdown-it-plantuml@^1.4.1:
+  version "1.4.1"
+  resolved "https://registry.yarnpkg.com/markdown-it-plantuml/-/markdown-it-plantuml-1.4.1.tgz#3bd5e7d92eaa5c6c68eb29802f7b46a8e05ca998"
+  integrity sha512-13KgnZaGYTHBp4iUmGofzZSBz+Zj6cyqfR0SXUIc9wgWTto5Xhn7NjaXYxY0z7uBeTUMlc9LMQq5uP4OM5xCHg==
+
 markdown-it@^12.3.2:
   version "12.3.2"
   resolved "https://registry.yarnpkg.com/markdown-it/-/markdown-it-12.3.2.tgz#bf92ac92283fe983fe4de8ff8abfb5ad72cd0c90"
@@ -1221,13 +1214,6 @@ queue-microtask@^1.2.2:
   version "1.2.3"
   resolved "https://registry.yarnpkg.com/queue-microtask/-/queue-microtask-1.2.3.tgz#4929228bbc724dfac43e0efb058caf7b6cfb6243"
   integrity sha512-NuaNSa6flKT5JaSYQzJok04JzTL1CA6aGhv5rfLW3PgqA+M2ChpZQnAC8h8i4ZFkBS8X5RqkDBHA7r4hej3K9A==
-
-raphael@2.3.0:
-  version "2.3.0"
-  resolved "https://registry.yarnpkg.com/raphael/-/raphael-2.3.0.tgz#eabeb09dba861a1d4cee077eaafb8c53f3131f89"
-  integrity sha512-w2yIenZAQnp257XUWGni4bLMVxpUpcIl7qgxEgDIXtmSypYtlNxfXWpOBxs7LBTps5sDwhRnrToJrMUrivqNTQ==
-  dependencies:
-    eve-raphael "0.5.0"
 
 readable-stream@^3.4.0:
   version "3.6.0"
@@ -1460,13 +1446,6 @@ vue@^3.2.26:
     "@vue/runtime-dom" "3.2.28"
     "@vue/server-renderer" "3.2.28"
     "@vue/shared" "3.2.28"
-
-vuepress-plugin-flowchart@^1.5.0:
-  version "1.5.0"
-  resolved "https://registry.yarnpkg.com/vuepress-plugin-flowchart/-/vuepress-plugin-flowchart-1.5.0.tgz#42342767e643e5f9d56ae2e68f5d306224a717b4"
-  integrity sha512-mmLstal1v/S2h22wBYR51XIweqR2AMbQ+kDO44GswqtVfXODhfJLZX2D2oPwnx6x0lRMRkbnKUE8OVllcCizvg==
-  dependencies:
-    flowchart.js "^1.11.3"
 
 vuepress-vite@2.0.0-beta.33:
   version "2.0.0-beta.33"
