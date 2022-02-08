@@ -60,7 +60,7 @@
 ## 复选框 - check
 
 显示一个复选框供用户交互, name 属性为其文本，value 属性为其勾选状态
-要动态获取它的勾选状态，请参考 [API] 或者 [数据双向绑定]
+要动态获取它的勾选状态，请参考 [API](api.html#getcontrolvalue) 或者 [数据绑定](binding.html)
 
 ```python
 {
@@ -79,7 +79,7 @@
 
 显示一组单选框供用户交互。
 一组 radio 必须放到同个 group 下.
-要动态获取它的勾选状态，请参考 [API] 或者 [数据绑定]
+要动态获取它的勾选状态，请参考 [API](api.html#getcontrolvalue) 或者 [数据绑定](binding.html)
 
 ```python
 controls = {
@@ -109,8 +109,8 @@ controls = {
 
 ## 按钮 - button
 
-显示一个按钮供用户交互
-要响应按钮点击事件，请参考 [事件]
+显示一个按钮供用户交互，要响应按钮点击事件，请参考 [事件](event.html)
+
 `name` 属性为按钮显示的文字，注意按钮默认会自适应其文字大小，如果要指定按钮大小，需要将 `matchParent` 属性设置为 `True`
 
 ```python
@@ -156,7 +156,7 @@ controls = [
 ## 文本输入框 - edit
 
 显示一个文本输入框，用于接收用户输入。
-要获取用户输入的内容，请参考 [事件] 和 [数据绑定]
+要获取用户输入的内容，请参考 [事件](event.html) 和 [数据绑定](binding.html)
 
 ```python
 controls = [

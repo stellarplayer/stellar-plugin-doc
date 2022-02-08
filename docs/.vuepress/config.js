@@ -9,6 +9,8 @@ module.exports = {
     themeConfig: {
       logo: 'logo.png',
       darkMode: false,
+      contributors: false,
+      lastUpdated: false,
       sidebar: [
         '/intor.md',
         '/getting-started.md',        
@@ -17,7 +19,8 @@ module.exports = {
         '/event.md',
         '/binding.md',
         '/api.md',
-        '/jsapi.md'
+        '/jsapi.md',
+        '/sandbox.md',
       ],
     },
     plugins: [
