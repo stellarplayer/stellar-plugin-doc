@@ -620,37 +620,25 @@ player.clearDanmu(self)
 
 调用后清除所有弹幕，当有新弹幕加入时会重新显示。
 
-### urlResult
+### dispatchResult
 
-返回 url 解析后的结果
+返回 dispatch 异步结果
 
 ```python
-player.urlResult(self, url, result)
+player.dispatchResult(self, dispatchId, **kwarg)
 ```
 
 参数 
 
 |参数|类型|说明|
 |--|--|--|
-|url|str|解析的 url|
-|result|array|解析结果|
+|dispatchId|int|dispatch 请求的 id|
+|kwarg|dict|结果|
 
-此接口与 `onUrlInput` 事件对应，用于返回 url 解析后的结果，其中 result 形如：
+此接口是播放器异步调用插件事件时，插件用来返回结果的接口，异步事件包括：
 
-```python
-{
-    "src": "http://test.com/1.m3u8",
-    'size': 1234567,
-    'headers': {"referer": "http://test.com"},
-    'title': "文件1"
-}
-```
-
-其中：
-* src 解析得到的 url 地址
-* size 影片大小
-* header 解析得到的 http 地址对应的请求头
-* title 影片名称
+* onUrlInput
+* onSearch
 
 ### setShaderSelectorShaders
 

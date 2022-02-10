@@ -71,18 +71,16 @@ class myplugin(StellarPlayer.IStellarPlayerPlugin):
 `onUrlInput`
 
 当用户打开 Url 地址失败时，会触发此事件。
-可以在事件响应方法中通过 player.urlResult 返回 url 的解析结果。
+可以在事件响应方法中通过 player.dispatchResult 异步返回 url 的解析结果。
 
 ```python
 class myplugin(StellarPlayer.IStellarPlayerPlugin):
-    def onUrlInput(self, url):
+    def onUrlInput(self, dispatchId, url):
         # url 为播放器打开失败的 url
         print(url)
         ...
-        self.player.urlResult(url, result)
+        self.player.dispatchResult(dispatchId, url=url, result=result)
 ```
-
-> 主动设置文字不会触发该响应函数
 
 ### 对话框创建成功后
 
