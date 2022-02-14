@@ -65,10 +65,14 @@ class myplugin(StellarPlayer.IStellarPlayerPlugin):
         # pts 为当前画面时间，单位毫秒  
         ...
 ```
+### 对话框创建成功后
 
-### 地址解析
+`onModalCreated`
 
-`onUrlInput`
+当插件调用 doModal 创建窗口成功后，会调用此回调
+### 地址解析 <Badge text="异步" />
+
+`onUrlInput` 
 
 当用户打开 Url 地址失败时，会触发此事件。
 可以在事件响应方法中通过 player.dispatchResult 异步返回 url 的解析结果。
@@ -82,11 +86,67 @@ class myplugin(StellarPlayer.IStellarPlayerPlugin):
         self.player.dispatchResult(dispatchId, url=url, result=result)
 ```
 
-### 对话框创建成功后
+result 形如：
 
-`onModalCreated`
+```python
+{
+    'src': ['http://test.com/1.m3u8'],
+    'size': 123456,
+    'headers': {
+        'referer': 'http://test.com/'
+    },
+    'title': '测试视频'
+}
+```
 
-当插件调用 doModal 创建窗口成功后，会调用此回调
+其中：
+* src 视频地址列表，如果有多项说明视频有多个文件拼接而成
+* size 视频总大小
+* headers 视频 http 请求头
+* title 视频标题
+
+### 播放器搜索 <Badge text="异步" />
+
+`onPlayerSearch` 
+
+当用户在播放器中搜索时，会触发此事件。
+可以在事件响应方法中通过 player.dispatchResult 异步返回搜索结果。
+
+```python
+class myplugin(StellarPlayer.IStellarPlayerPlugin):
+    def onPlayerSearch(self, dispatchId, str):
+        # str 用户搜索的关键字
+        print(str)
+        ...
+        self.player.dispatchResult(dispatchId, result=result)
+```
+
+result 形如：
+
+```python
+[
+    {
+        "name": "黑客帝国动画版",
+        "pic": "https://img.52swat.cn/upload/vod/20200728-14/34603be8a26edd9c5d041d1bb818e6af.jpg",
+        "summary": "《黑客帝国动画版》由9段以《黑客帝国》系列电影世界观为基础生发出的短片组成",
+        "pub_date": "2003-06-03",
+        "urls": [
+            [
+                "高清",
+                "https://vod1.bdzybf1.com/20200630/xK2VjVfi/index.m3u8"
+            ]
+        ]
+    },
+    ...
+]
+```
+
+其中：
+* name 结果名称
+* pic 结果图片
+* summary 文字描述
+* pub_date 影片发布日期
+* urls 影片地址，可能返回多个文件，按数组返回，数组中每个元素格式为（文件名称，文件地址）
 
 ## 控件事件
 
