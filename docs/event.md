@@ -114,12 +114,17 @@ result 形如：
 
 ```python
 class myplugin(StellarPlayer.IStellarPlayerPlugin):
-    def onPlayerSearch(self, dispatchId, str):
-        # str 用户搜索的关键字
-        print(str)
+    def onPlayerSearch(self, dispatchId, searchId, wd, limit):
         ...
         self.player.dispatchResult(dispatchId, result=result)
 ```
+
+参数:
+* `dispatchId` 异步调用 id，由 `dispatchAsync` 自动附加
+* `searchId` 搜索 id，由业务层维护，用于区分多次搜索和相应结果
+* `wd` 用户搜索的关键字
+* `limit` 当查询到了 limit 条结果后返回（可能会超出 limit 条）, 负数表示不限制（导致查询慢）
+
 
 result 形如：
 

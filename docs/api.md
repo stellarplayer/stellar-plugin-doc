@@ -491,6 +491,47 @@ player.getThumbnail(self, params)
 返回值
 缩略图的 base64 数据
 
+### getQRCodeImg
+
+获取指定内容的二维码图片()
+
+```python
+player.getThumbnail(self, params)
+```
+
+参数
+
+|参数|类型|说明|
+|--|--|--|
+|params['content']|string|要生成二维码的内容|
+|params['bg']|string|背景色 #rrggbb 形式|
+|params['fg']|string|前景色 #rrggbb 形式|
+
+返回值
+
+缩略图的 base64 数据
+
+```python
+def show(self):
+    img = self.player.getQRCodeImg({
+        "content": "https://v2ex.com/-",
+        "bg": "#ffffff",
+        "fg": "#ff0000"
+    })
+
+    controls = [
+        {
+            'type':'image',
+            'name':'img',
+            'height': 300, 
+            'width': 300, 
+            'value': 'data:image/png;base64,' + img
+        },
+        {'type':'space'}
+    ]
+    self.doModal('main',500, 500,'测试', controls)
+```
+
 ### addToPlaylist
 
 添加 url 到播放列表
