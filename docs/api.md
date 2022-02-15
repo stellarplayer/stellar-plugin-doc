@@ -509,7 +509,7 @@ player.getThumbnail(self, params)
 
 返回值
 
-缩略图的 base64 数据
+二维码图片的 base64 数据
 
 ```python
 def show(self):
