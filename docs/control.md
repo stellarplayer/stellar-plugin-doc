@@ -210,7 +210,7 @@ controls = [
 
 ![image control](./images/control-8.png)
 
-# 列表 - list
+## 列表 - list
 
 显示一个列表控件，用于展示多条数据。
 定义一个列表，需要提供列表字段和数据：
