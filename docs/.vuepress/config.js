@@ -25,11 +25,24 @@ module.exports = {
     },
     plugins: [
       [
+        '@vuepress/plugin-search',
+        {
+          locales: {
+            '/': {
+              placeholder: 'Search',
+            },
+            '/zh/': {
+              placeholder: '搜索',
+            },
+          },
+        },
+      ],
+      [
           '@vuepress/register-components',
           {
               componentsDir: path.resolve(__dirname, './components'),
           },
-      ]
+      ],      
     ],
     extendsMarkdown: md => {
        md.use(require('markdown-it-plantuml'))
