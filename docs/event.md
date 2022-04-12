@@ -52,6 +52,45 @@ class myplugin(StellarPlayer.IStellarPlayerPlugin):
         self.doModal('main',600, 500,'测试', controls)
 ```
 
+### 播放
+
+`onPlay`
+
+当开始播放视频时触发此事件
+
+```python
+class myplugin(StellarPlayer.IStellarPlayerPlugin):
+    def onPlay(self, url):  
+        # url 当前播放的视频地址
+        ...
+```
+
+### 停止播放
+
+`onStopPlay`
+
+当停止播放视频时触发此事件
+
+```python
+class myplugin(StellarPlayer.IStellarPlayerPlugin):
+    def onStopPlay(self, watchTime):  
+        # watchTime 观看时长
+        ...
+```
+
+### 暂停 / 继续播放
+
+`onPause`
+
+当暂停或者继续播放视频时触发此事件
+
+```python
+class myplugin(StellarPlayer.IStellarPlayerPlugin):
+    def onPause(self, pause):  
+        # pause=1 暂停; pause=0 继续
+        ...
+```
+
 ### 画面渲染
 
 `onVideoRendered`
