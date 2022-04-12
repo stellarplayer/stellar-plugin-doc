@@ -61,8 +61,10 @@ class myplugin(StellarPlayer.IStellarPlayerPlugin):
 
 ```python
 class myplugin(StellarPlayer.IStellarPlayerPlugin):
-    def onVideoRendered(self, pts):  
+    def onVideoRendered(self, pts, viewWidth, viewHeight, frameWidth, frameHeight):  
         # pts 为当前画面时间，单位毫秒  
+        # viewWidth, viewHeight 视频窗口尺寸
+        # frameWidth, frameHeight 视频画面尺寸
         ...
 ```
 ### 对话框创建成功后
