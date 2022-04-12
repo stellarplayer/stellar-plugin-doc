@@ -86,8 +86,8 @@ class myplugin(StellarPlayer.IStellarPlayerPlugin):
 
 ```python
 class myplugin(StellarPlayer.IStellarPlayerPlugin):
-    def onPause(self, pause):  
-        # pause=1 暂停; pause=0 继续
+    def onPause(self, play):  
+        # play=0 暂停; play=1 继续
         ...
 ```
 
