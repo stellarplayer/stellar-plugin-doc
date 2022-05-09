@@ -637,6 +637,38 @@ player.addDanmu(self, message)
 |--|--|--|
 |message|str|弹幕文字|
 
+### batchAddDanmu
+
+添加一批弹幕到当前正在播放的文件，只是临时添加
+
+```python
+player.batchAddDanmu(self, messages)
+```
+
+参数 
+
+|参数|类型|说明|
+|--|--|--|
+|messages|array|弹幕列表|
+
+messages 为数组形式的要添加的弹幕列表，每个元素的定义如下
+
+```
+{
+    content: '弹幕内容',
+    tm: 弹幕时间（毫秒）
+}
+```
+
+示例代码：
+```python
+self.player.showDanmu(true)
+self.player.batchAddDanmu([{
+    "content": f"hello {i}",
+    "tm": 1000 * i
+} for i in range(100)])
+```
+
 ### showDanmu
 
 切换弹幕的显示、隐藏。
