@@ -390,6 +390,50 @@ player.play(self,url,caption=None,headers={})
 |caption|str|带设置的播放器标题|
 |headers|dict|播放 http url 时，附带的 http 请求头|
 
+### playMultiUrls
+
+播放一个 url，可以传多条线路地址
+播放器会依次尝试，直到打开成功
+
+```python
+player.play(self,urls,caption=None)
+```
+
+参数 
+
+|参数|类型|说明|
+|--|--|--|
+|urls|array|待播放的视频线路数组|
+|caption|str|带设置的播放器标题|
+
+其中 urls 数组中的元素结构为
+
+|字段|类型|说明|
+|--|--|--|
+|url|array|线路地址|
+|headers|object|地址对应的 http 请求头, 可以为空|
+
+```python
+self.player.playMultiUrls([ 
+    {
+        "url": "http://111.13.42.45/PLTV/88888888/224/3221226453/1.m3u8",
+        "headers": {}
+    },
+    {
+        "url": "http://39.136.18.76/cdnrrs.gz.chinamobile.com/PLTV/88888888/224/3221226046/1/index.m3u8?fmt=ts2hls"
+    },
+    {
+        "url": "http://39.135.32.7:6610/000000001000/HD-4000k-1080P-cctv6/1.m3u8?IASHttpSessionId=OTT?zzhongd"
+    },
+    {
+        "url": "http://39.135.138.58:18890/PLTV/88888888/224/3221225632/index.m3u8"
+    },
+    {
+        "url": "http://117.148.179.160/PLTV/88888888/224/3221231724/index.m3u8"
+    }
+], "CCTV-6")
+```
+
 ### pause
 
 暂停、继续
