@@ -623,6 +623,49 @@ player.setPlaylistCate(self, index)
 |--|--|--|
 |index|int|待切换的播放列表类别序号|
 
+
+### getPlayInfo
+
+获取当前播放信息
+
+```python
+player.getPlayInfo(self)
+```
+
+返回值
+
+返回当前播放信息，当前正在播放或暂停状态时，返回值：
+
+```
+{
+    status: 0,
+    videoWidth: 1280,
+    videoHeight: 720,
+    viewWidth: 1920,
+    viewHeight: 1050,
+    url: "D:\\1.mp4"
+}
+```
+
+当播放器处于停止状态时，返回值：
+
+```
+{
+    status: 2,
+    viewWidth: 1920,
+    viewHeight: 1050
+}
+```
+
+|返回值|类型|说明|
+|--|--|--|
+|status|int|播放状态，-1=无效；0=播放；1=暂停；2=停止|
+|videoWidth|int|视频画面宽|
+|videoHeight|int|视频画面高|
+|viewWidth|int|视频区域宽|
+|viewHeight|int|视频区域高|
+|url|string|播放视频 url|
+
 ### addDanmu
 
 以弹幕形式显示一行文字
@@ -662,12 +705,14 @@ messages 为数组形式的要添加的弹幕列表，每个元素的定义如�
 
 示例代码：
 ```python
-self.player.showDanmu(true)
 self.player.batchAddDanmu([{
-    "content": f"hello {i}",
-    "tm": 1000 * i
+    "msg": f"hello {i}",
+    "tp": 1000 * i
 } for i in range(100)])
+self.player.showDanmu(True)
 ```
+
+其中 msg 为弹幕内容, tp 为弹幕时间(毫秒)
 
 ### showDanmu
 
